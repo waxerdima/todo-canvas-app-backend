@@ -9,6 +9,7 @@ function findItemIdBySelectedItem(request) {
 
 function findItemIdByNumber(number, request) {
     var items = getItems(request);
+    $jsapi.log('items' + items);
     if (items && items.length) {
         for (var ind = 0; ind < items.length; ind++) {
             if (items[ind].number == number) {
