@@ -15,6 +15,7 @@ function findItemIdByNumber(number, request) {
     $jsapi.log('items' + items);
     if (items && items.length) {
         for (var ind = 0; ind < items.length; ind++) {
+            $jsapi.log('items for ' + items[ind].number + ' ' + number);
             if (items[ind].number == number) {
                 return items[ind].id;
             }
