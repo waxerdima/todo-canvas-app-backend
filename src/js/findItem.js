@@ -3,8 +3,10 @@ function findItemIdBySelectedItem(request) {
     $jsapi.log('items 1' + items + request);
     var selectedItem = getSelectedItem(request);
     if (selectedItem && items && items.length > selectedItem.index) {
+        $jsapi.log('items xxx');
         return items[selectedItem.index].id;
     }
+    $jsapi.log('items null');
     return null;
 }
 
