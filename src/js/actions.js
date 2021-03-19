@@ -9,7 +9,7 @@ function addNote(note, context) {
 function doneNote(id, context){
     addAction({
         type: "done_note",
-        id: 1
+        id: id
     }, context, "udovolstvie");
 }
 

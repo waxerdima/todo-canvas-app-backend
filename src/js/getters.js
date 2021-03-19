@@ -18,6 +18,7 @@ function getSelectedItem(request) {
 }
 
 function getItems(request) {
+    $jsapi.log('проверка');
     if (request &&
         request.payload &&
         request.payload.meta &&
@@ -25,6 +26,7 @@ function getItems(request) {
         request.payload.meta.current_app.state &&
         request.payload.meta.current_app.state.item_selector
     ) {
+        $jsapi.log(request.payload.meta.current_app.state.item_selector.items);
         return request.payload.meta.current_app.state.item_selector.items;
     }
     return null;
