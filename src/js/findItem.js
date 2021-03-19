@@ -1,5 +1,6 @@
 function findItemIdBySelectedItem(request) {
     var items = getItems(request);
+    $jsapi.log('items 1' + items);
     var selectedItem = getSelectedItem(request);
     if (selectedItem && items && items.length > selectedItem.index) {
         return items[selectedItem.index].id;
