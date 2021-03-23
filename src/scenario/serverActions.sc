@@ -47,9 +47,9 @@ theme: /
                 a: Close
         else:
             random: 
-                a: Excellent!
-                a: Good!
-                a: Very good!
+                a:  Russia's president wants to encourage people to get vaccinated but gets his jab behind closed doors. Europe Putin gets Covid jab but without cameras!
+                a: Putin gets Covid jab but without cameras !
+                a: Russia's president wants to encourage people to get vaccinated but gets his jab behind closed doors.
                 
         buttons:
             "Запиши купить молоко"
