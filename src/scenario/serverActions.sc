@@ -30,6 +30,32 @@ theme: /
             "Добавь запись помыть машину"
             "Выйди"
 
+
+    state: TaskDone
+        event!: done
+        event!: DONE
+
+        script:
+            $temp.gender = $request.rawRequest.payload.character.gender;
+            
+        if: $request && $request.data && $request.data.eventData && $request.data.eventData.note
+            if: $temp.gender == "male"
+                a: Done {{ $request.data.eventData.note }}! Good!
+            elseif: $temp.gender == "female"
+                a: Done {{ $request.data.eventData.note }}! Good!
+            else:
+                a: Close
+        else:
+            random: 
+                a: Excellent!
+                a: Good!
+                a: Very good!
+                
+        buttons:
+            "Запиши купить молоко"
+            "Добавь запись помыть машину"
+            "Выйди"
+
            
     state: ДобавленаНоваяЗапись
         event!: note_added

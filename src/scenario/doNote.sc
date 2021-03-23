@@ -14,6 +14,20 @@ theme: /
             
         go!: /ЗаданиеВыполнено
 
+    state: doElementForNumber
+        q!: [I am] (done|success) number
+            @duckling.number:: digit
+            $weight<1.001>
+        
+        script:
+            var itemId = findItemIdByNumber(
+                $parseTree._digit,
+                getRequest($context)
+            );
+            doneNote(itemId, $context);
+            
+        go!: /TaskDone
+
 
     state: ВыполнениеЭлемента
         q!: [я] (выполнил|сделал)
