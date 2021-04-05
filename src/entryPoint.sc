@@ -39,8 +39,7 @@ theme: /
         script:
             log($jsapi.cailaService.getCurrentClassifierToken());
 
-        if: $temp.appeal == "official"
-            $reactions.answer('sadgsdf');
+            $reactions.answer(selectRandomArg("Привет","Приветствую"));
 
 
     state: Fallback
