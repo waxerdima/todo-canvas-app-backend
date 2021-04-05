@@ -1,6 +1,7 @@
 require: slotfilling/slotFilling.sc
   module = sys.zb-common
-  
+require: common.js
+  module = sys.zb-common
 # Подключение javascript обработчиков
 require: js/getters.js
 require: js/reply.js
