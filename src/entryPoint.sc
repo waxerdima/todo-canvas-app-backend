@@ -40,7 +40,7 @@ theme: /
             log($jsapi.cailaService.getCurrentClassifierToken());
 
         if: $temp.appeal == "official"
-            $reactions.answer(selectRandomArg("Привет","Приветствую"));
+            $reactions.answer('sadgsdf');
 
 
     state: Fallback
