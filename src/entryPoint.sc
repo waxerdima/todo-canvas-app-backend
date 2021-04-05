@@ -40,11 +40,7 @@ theme: /
             log($jsapi.cailaService.getCurrentClassifierToken());
 
         if: $temp.appeal == "official"
-            a: Добро пожаловать в заметки! Чтобы добавить новую, просто скажите "Запомни" и  нужный текст.
-        elseif: $temp.appeal == "no_official"
-            a: Добро пожаловать в заметки! Чтобы добавить новую, просто скажи "Запомни" и  нужный текст.
-        else:
-            a: Добро пожаловать в заметки!
+            $reactions.answer(selectRandomArg("Привет","Приветствую"));
 
 
     state: Fallback
