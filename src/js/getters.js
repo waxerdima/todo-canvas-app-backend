@@ -18,7 +18,7 @@ function getSelectedItem(request) {
 }
 
 function getItems(request) {
-    $jsapi.log('проверка');
+    $jsapi.log('проверка1');
     if (request &&
         request.payload &&
         request.payload.meta &&
