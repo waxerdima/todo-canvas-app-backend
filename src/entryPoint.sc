@@ -28,19 +28,14 @@ patterns:
 
 theme: /
     state: Запуск
-        # При запуске приложения с кнопки прилетит сообщение /start.
-        q!: $regex</start>
-        
-        # При запуске приложения с голоса прилетит сказанная фраза.
-        q!: [$repeat<$OpenSkipWords>] 
-            $repeat<$OpenKeyWords>
-            [$repeat<$OpenSkipWords>] 
-            $projectName
-        script:
-            log($jsapi.cailaService.getCurrentClassifierToken());
-
-            $reactions.answer(selectRandomArg("Привет","Приветствую"));
-
+        q!: $Number
+        script: $temp.age = parseInt($parseTree.value);
+        if:     $temp.age > 18
+            a: Больше 18
+        elseif: $temp.age == 18
+            a: Ровно 18
+        else:
+            a: Меньше 18
 
     state: Fallback
         event!: noMatch
