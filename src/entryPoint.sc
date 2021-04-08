@@ -28,7 +28,6 @@ patterns:
 
 theme: /
     state: Запуск
-        q!: $Number
         script: $temp.age = parseInt($parseTree.value);
         if:     $temp.age > 18
             a: Больше 18
