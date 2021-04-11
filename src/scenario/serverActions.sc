@@ -10,7 +10,6 @@ theme: /
         event!: DONE
 
         script:
-            $jsapi.log('!!!!!!555555')
             $temp.gender = $request.rawRequest.payload.character.gender;
             
         if: $request && $request.data && $request.data.eventData && $request.data.eventData.note
@@ -22,36 +21,9 @@ theme: /
                 a: Закрыто
         else:
             random: 
-                a: Молодец1!
-                a: Красавчик2!
-                a: Супер3!
-                
-        buttons:
-            "Запиши купить молоко"
-            "Добавь запись помыть машину"
-            "Выйди"
-
-
-    state: TaskDone
-        event!: done
-        event!: DONE
-
-        script:
-            $jsapi.log('!!!!!!555555')
-            $temp.gender = $request.rawRequest.payload.character.gender;
-            
-        if: $request && $request.data && $request.data.eventData && $request.data.eventData.note
-            if: $temp.gender == "male"
-                a: Done {{ $request.data.eventData.note }}! Good!
-            elseif: $temp.gender == "female"
-                a: Done {{ $request.data.eventData.note }}! Good!
-            else:
-                a: Close
-        else:
-            random: 
-                a:  Russia's president wants to encourage people to get vaccinated but gets his jab behind closed doors. Europe Putin gets Covid jab but without cameras!
-                a: Putin gets Covid jab but without cameras !
-                a: Russia's president wants to encourage people to get vaccinated but gets his jab behind closed doors.
+                a: Молодец!
+                a: Красавчик!
+                a: Супер!
                 
         buttons:
             "Запиши купить молоко"
@@ -72,4 +44,3 @@ theme: /
             "Запиши купить молоко"
             "Добавь запись помыть машину"
             "Выйди"
-            
