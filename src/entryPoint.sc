@@ -1,7 +1,6 @@
 require: slotfilling/slotFilling.sc
   module = sys.zb-common
-require: common.js
-  module = sys.zb-common
+  
 # Подключение javascript обработчиков
 require: js/getters.js
 require: js/reply.js
@@ -28,14 +27,25 @@ patterns:
 
 theme: /
     state: Запуск
-        q!: * $Number::num
-        script: $temp.age = parseInt($parseTree.value);
-        if:     $temp.age > 18
-            a: Больше 18
-        elseif: $temp.age == 18
-            a: Ровно 18
+        # При запуске приложения с кнопки прилетит сообщение /start.
+        q!: $regex</start>
+        
+        # При запуске приложения с голоса прилетит сказанная фраза.
+        q!: [$repeat<$OpenSkipWords>] 
+            $repeat<$OpenKeyWords>
+            [$repeat<$OpenSkipWords>] 
+            $projectName
+        script:
+            log($jsapi.cailaService.getCurrentClassifierToken());
+            $temp.appeal = $request.rawRequest.payload.character.appeal;
+            
+        if: $temp.appeal == "official"
+            a: Добро пожаловать в заметки! Чтобы добавить новую, просто скажите "Запомни" и  нужный текст.
+        elseif: $temp.appeal == "no_official"
+            a: Добро пожаловать в заметки! Чтобы добавить новую, просто скажи "Запомни" и  нужный текст.
         else:
-            a: Меньше 18
+            a: Добро пожаловать в заметки!
+
 
     state: Fallback
         event!: noMatch
