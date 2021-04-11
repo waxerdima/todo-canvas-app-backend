@@ -10,6 +10,7 @@ theme: /
         event!: DONE
 
         script:
+            $jsapi.log('!!!!!!555555')
             $temp.gender = $request.rawRequest.payload.character.gender;
             
         if: $request && $request.data && $request.data.eventData && $request.data.eventData.note
