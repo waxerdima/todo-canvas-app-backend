@@ -45,3 +45,6 @@ theme: /
     state: Fallback
         event!: noMatch
         a: Я не понимаю.
+    state: CatchAll
+        q!: *
+        a: Не понял
