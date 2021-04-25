@@ -39,7 +39,7 @@ theme: /
         script:
             log($jsapi.cailaService.getCurrentClassifierToken());
 
-            $reactions.answer(selectRandomArg("Привет","Приветствую"));
+            $reactions.answer(selectRandomArg("Привет1","Приветствую2"));
 
 
     state: Fallback
