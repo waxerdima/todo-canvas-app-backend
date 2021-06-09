@@ -37,6 +37,7 @@ theme: /
             [$repeat<$OpenSkipWords>] 
             $projectName
         script:
+            $jsapi.log('!!!!!!!!!');
             log($jsapi.cailaService.getCurrentClassifierToken());
 
             $reactions.answer(selectRandomArg("Привет1","Приветствую2"));
